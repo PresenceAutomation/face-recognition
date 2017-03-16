@@ -1,7 +1,6 @@
 import RNFetchBlob from 'react-native-fetch-blob';
 
-const url = 'https://groupkhoapham.herokuapp.com/upload';
-const upload = (data) => (
+const upload = (url, data) => (
   RNFetchBlob.fetch('POST', url, {
     'Content-Type': 'multipart/form-data'
   }, data)

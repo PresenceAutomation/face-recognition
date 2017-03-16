@@ -20,7 +20,8 @@ export default class App extends Component {
   }
 
   upload() {
-    uploadFile([{ name: 'avatar', filename: 'avatar.png', data: this.state.data }])
+    const url = 'https://groupkhoapham.herokuapp.com/upload';
+    uploadFile(url, [{ name: 'avatar', filename: 'avatar.png', data: this.state.data }])
     .then(res => res.text())
     .then(logInfo => this.setState({ ...this.state, log: logInfo }))
     .catch(err => console.log(`${err} `));
