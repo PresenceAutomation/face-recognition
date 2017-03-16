@@ -1,11 +1,9 @@
-import RNFetchBlob from 'react-native-fetch-blob'
+import RNFetchBlob from 'react-native-fetch-blob';
 
-let upload = (data) => {
-  return RNFetchBlob.fetch('POST', 'https://khoapham-face.herokuapp.com/findByImage', {
-    Authorization : "Bearer access-token",
-    otherHeader : "foo",
-    'Content-Type' : 'multipart/form-data',
-  }, data);
-}
-
+const url = 'https://groupkhoapham.herokuapp.com/upload';
+const upload = (data) => (
+  RNFetchBlob.fetch('POST', url, {
+    'Content-Type': 'multipart/form-data'
+  }, data)
+);
 module.exports = upload;
