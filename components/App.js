@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navigator } from 'react-native';
+import { Navigator, WebView } from 'react-native';
 
 import Menu from './Menu';
 import Check from './Check';
@@ -19,9 +19,9 @@ const renderScene = (route, navigator) => {
 export default class Nav extends Component {
     render() {
         return (
-            <Navigator 
-                initialRoute={{ name: 'Menu' }}
-                renderScene={renderScene}
+            <WebView
+                source={{ uri: 'https://iokpt.herokuapp.com' }}
+                style={{ marginTop: 20 }}
             />
         );
     }
